@@ -16,7 +16,6 @@ run_installer() {
     echo
 }
 
-# Base URL for the raw scripts (adjust to your repository)
 BASE_URL="https://raw.githubusercontent.com/huajiejin/ggml-tools-installer/main"
 
 # Run installers
