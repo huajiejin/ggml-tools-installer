@@ -54,7 +54,7 @@ fi
 # Build the project
 echo "Building llama.cpp..."
 cmake -B build
-cmake --build build --config Release
+cmake --build build --config Release -j 6
 
 # Add to shell profile if not already present
 SHELL_PROFILES=("$HOME/.zshrc" "$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
