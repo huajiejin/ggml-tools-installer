@@ -16,7 +16,7 @@ To install all three tools and their dependencies, run the following command in 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/huajiejin/ggml-tools-installer/main/install_all.sh)"
 ```
 
-*Run the above command again to update the tools. It's designed to be idempotent and safe to run multiple times.*
+*Tip: Run the above command again to update the tools. It's designed to be idempotent and safe to run multiple times.*
 
 ## Prerequisites & Automatic Installation
 
@@ -57,7 +57,7 @@ If you only need a specific tool, you can run its installer individually. Each s
 1.  **Checks for and installs dependencies**: Verifies that `git`, `cmake`, `go`, and `node` are installed, and installs any that are missing.
 2.  **Clones or updates repositories**: Downloads the source code to a hidden directory in your home folder (`~/.llama.cpp`, etc.). If it already exists, it pulls the latest changes.
 3.  **Builds the projects**: Compiles the source code to create executable binaries optimized for your Mac.
-4.  **Updates your shell profile**: Adds the binary paths and a `llama-swap` alias to your `.zshrc` or `.profile` file so you can run the commands from anywhere.
+4.  **Updates your shell profile**: Adds the binary paths and a `llama-swap` alias to your `.zshrc` or `.profile` file if they don't already exist, so you can run the commands from anywhere.
 
 
 ## Uninstalling
