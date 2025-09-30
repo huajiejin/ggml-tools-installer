@@ -18,10 +18,10 @@ install_brew() {
 
 # Function to check and install packages using Homebrew
 check_and_install_packages() {
-    install_brew
     for pkg in "$@"; do
         if ! command -v "$pkg" &> /dev/null; then
             echo "$pkg not found. Installing with Homebrew..."
+    		install_brew
             brew install "$pkg"
         else
             echo "$pkg is already installed."
