@@ -6,6 +6,8 @@ This project provides a set of shell scripts to easily download, build, and inst
 
 The scripts help you install the **latest versions** of these tools, which may not be available through Homebrew (It usually takes some time for Homebrew to catch up).
 
+*Note: These scripts are not designed for any other OS except macOS*
+
 ## Quick Install
 
 To install all three tools and their dependencies, run the following command in your terminal:
@@ -56,6 +58,50 @@ If you only need a specific tool, you can run its installer individually. Each s
 4.  **Updates your shell profile**: Adds the binary paths and a `llama-swap` alias to your `.zshrc` or `.profile` file so you can run the commands from anywhere.
 
 
-## What it does NOT do?
+## Uninstalling
 
-- Not designed for any other OS except macOS
+To uninstall these tools, you need to remove the installation directory and the configuration lines from your shell profile.
+
+### To Uninstall llama.cpp
+
+1.  **Remove the directory:**
+    ```bash
+    rm -rf ~/.llama.cpp
+    ```
+
+2.  **Edit your shell profile** (e.g., `~/.zshrc`, `~/.bashrc`) and remove the following lines:
+    ```bash
+    # Add llama.cpp to PATH
+    export PATH="$PATH:$HOME/.llama.cpp/build/bin"
+    ```
+
+### To Uninstall whisper.cpp
+
+1.  **Remove the directory:**
+    ```bash
+    rm -rf ~/.whisper.cpp
+    ```
+
+2.  **Edit your shell profile** (e.g., `~/.zshrc`, `~/.bashrc`) and remove the following lines:
+    ```bash
+    # Add whisper.cpp to PATH
+    export PATH="$PATH:$HOME/.whisper.cpp/build/bin"
+    ```
+
+### To Uninstall llama-swap
+
+1.  **Remove the directory:**
+    ```bash
+    rm -rf ~/.llama-swap
+    ```
+
+2.  **Edit your shell profile** (e.g., `~/.zshrc`, `~/.bashrc`) and remove the following lines:
+    ```bash
+    # Add llama-swap to PATH
+    export PATH="$PATH:$HOME/.llama-swap/build"
+
+    # Alias for llama-swap
+    alias llama-swap='llama-swap-darwin-arm64'
+    ```
+
+After removing the files and editing your profile, restart your terminal for the changes to take effect.
