@@ -50,7 +50,7 @@ If you only need a specific tool, you can run its installer individually. Each s
 
 ## What it does
 
-1.  **Checks for and installs dependencies**: Verifies that `git`, `cmake`, `make`, and `node` are installed, and installs any that are missing.
+1.  **Checks for and installs dependencies**: Verifies that `git`, `cmake`, `go`, and `node` are installed, and installs any that are missing.
 2.  **Clones or updates repositories**: Downloads the source code to a hidden directory in your home folder (`~/.llama.cpp`, etc.). If it already exists, it pulls the latest changes.
 3.  **Builds the projects**: Compiles the source code to create executable binaries optimized for your Mac.
 4.  **Updates your shell profile**: Adds the binary paths and a `llama-swap` alias to your `.zshrc` or `.profile` file so you can run the commands from anywhere.
