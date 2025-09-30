@@ -16,6 +16,8 @@ To install all three tools and their dependencies, run the following command in 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/huajiejin/ggml-tools-installer/main/install_all.sh)"
 ```
 
+*Run the above command again to update the tools. It's designed to be idempotent and safe to run multiple times.*
+
 ## Prerequisites & Automatic Installation
 
 These scripts require several command-line tools to function. **You do not need to install them manually.** The installer script will check for them and install any missing tools for you.
