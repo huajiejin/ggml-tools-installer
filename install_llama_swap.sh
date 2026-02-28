@@ -53,7 +53,7 @@ fi
 
 # Build the project
 echo "Building llama-swap..."
-(cd ui && npm install)
+(cd ui-svelte && npm install)
 make clean all
 
 # Add to shell profile if not already present
