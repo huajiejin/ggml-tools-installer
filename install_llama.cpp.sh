@@ -31,7 +31,7 @@ check_and_install_packages() {
 # --- End of Dependency Management ---
 
 # Check for required tools
-check_and_install_packages "git" "cmake"
+check_and_install_packages "git" "cmake" "openssl"
 
 # Set project variables
 REPO_URL="git@github.com:ggml-org/llama.cpp.git"
@@ -53,7 +53,7 @@ fi
 
 # Build the project
 echo "Building llama.cpp..."
-cmake -B build
+cmake -B build -DLLAMA_OPENSSL=ON
 cmake --build build --config Release -j 6
 
 # Add to shell profile if not already present
