@@ -51,6 +51,10 @@ else
 	git checkout $BRANCH_NAME
 fi
 
+# Remove the existing build folder to start fresh
+echo "Removing old build folder..."
+rm -rf build
+
 # Build the project
 echo "Building llama.cpp..."
 cmake -B build -DLLAMA_OPENSSL=ON
