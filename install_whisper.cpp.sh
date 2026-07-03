@@ -50,6 +50,10 @@ else
     cd "$INSTALL_DIR"
 fi
 
+# Remove the existing build folder to start fresh
+echo "Removing old build folder..."
+rm -rf build
+
 # Build the project
 echo "Building whisper.cpp..."
 cmake -B build
