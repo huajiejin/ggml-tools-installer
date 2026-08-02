@@ -22,6 +22,7 @@ BASE_URL="https://raw.githubusercontent.com/huajiejin/ggml-tools-installer/main"
 run_installer "llama.cpp" "$BASE_URL/install_llama.cpp.sh"
 run_installer "whisper.cpp" "$BASE_URL/install_whisper.cpp.sh"
 run_installer "llama-swap" "$BASE_URL/install_llama_swap.sh"
+run_installer "ds4" "$BASE_URL/install_ds4.sh"
 
 echo "All installations are complete."
 echo "IMPORTANT: Please close and reopen your terminal, or run 'source <your_shell_profile>' to start using the new commands."
