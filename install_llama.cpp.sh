@@ -34,7 +34,7 @@ check_and_install_packages() {
 check_and_install_packages "git" "cmake" "openssl"
 
 # Set project variables
-REPO_URL="git@github.com:ggml-org/llama.cpp.git"
+REPO_URL="https://github.com/ggml-org/llama.cpp.git"
 INSTALL_DIR="$HOME/.llama.cpp"
 BIN_DIR="$INSTALL_DIR/build/bin"
 BRANCH_NAME="master"
@@ -46,7 +46,7 @@ if [ -d "$INSTALL_DIR" ]; then
     git checkout $BRANCH_NAME && git pull || { echo "Failed to update repository. Please check for local changes or network issues."; exit 1; }
 else
     echo "Cloning llama.cpp..."
-    git clone "$REPO_URL" "$INSTALL_DIR" || { echo "Failed to clone repository. Please ensure your SSH key is configured on GitHub."; exit 1; }
+    git clone "$REPO_URL" "$INSTALL_DIR" || { echo "Failed to clone repository. Please check your network connection."; exit 1; }
     cd "$INSTALL_DIR"
 	git checkout $BRANCH_NAME
 fi

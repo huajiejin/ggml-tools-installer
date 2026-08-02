@@ -34,7 +34,7 @@ check_and_install_packages() {
 check_and_install_packages "git" "node" "go"
 
 # Set project variables
-REPO_URL="git@github.com:mostlygeek/llama-swap.git"
+REPO_URL="https://github.com/mostlygeek/llama-swap.git"
 INSTALL_DIR="$HOME/.llama-swap"
 BIN_DIR="$INSTALL_DIR/build"
 BRANCH_NAME="main"
@@ -47,7 +47,7 @@ if [ -d "$INSTALL_DIR" ]; then
     git checkout $BRANCH_NAME && git pull || { echo "Failed to update repository. Please check for local changes or network issues."; exit 1; }
 else
     echo "Cloning llama-swap..."
-    git clone "$REPO_URL" "$INSTALL_DIR" || { echo "Failed to clone repository. Please ensure your SSH key is configured on GitHub."; exit 1; }
+    git clone "$REPO_URL" "$INSTALL_DIR" || { echo "Failed to clone repository. Please check your network connection."; exit 1; }
     cd "$INSTALL_DIR"
 fi
 
