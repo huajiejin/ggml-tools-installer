@@ -44,7 +44,10 @@ ALIAS_CMD="alias llama-swap='llama-swap-darwin-arm64'"
 if [ -d "$INSTALL_DIR" ]; then
     echo "Updating llama-swap..."
     cd "$INSTALL_DIR"
-    git checkout $BRANCH_NAME && git pull || { echo "Failed to update repository. Please check for local changes or network issues."; exit 1; }
+    git checkout $BRANCH_NAME || { echo "Failed to update repository. Please check for local changes or network issues."; exit 1; }
+    # Discard local edits to the lockfile (upstream Makefile's `npm install` dirties it); no-op if clean
+    git checkout -- ui-svelte/package-lock.json 2>/dev/null || true
+    git pull || { echo "Failed to update repository. Please check for local changes or network issues."; exit 1; }
 else
     echo "Cloning llama-swap..."
     git clone "$REPO_URL" "$INSTALL_DIR" || { echo "Failed to clone repository. Please check your network connection."; exit 1; }
@@ -54,6 +57,8 @@ fi
 # Build the project
 echo "Building llama-swap..."
 (cd ui-svelte && npm ci)
+# Satisfy the Makefile's stale `ui/node_modules` target so `make` skips its own `npm install` (which dirties the lockfile)
+mkdir -p ui/node_modules
 make clean all
 
 # Add to shell profile if not already present
